@@ -1,0 +1,2521 @@
+{
+  "evalId": "eval-wYt-2026-11-25T21:57:12",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-11-25T21:57:12.146Z",
+    "prompts": [
+      {
+        "id": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "raw": "{{message}}",
+        "label": "{{message}}",
+        "provider": "bot-v2-fixed",
+        "metrics": {
+          "score": 7.5,
+          "testPassCount": 5,
+          "testFailCount": 5,
+          "testErrorCount": 0,
+          "testCacheHitCount": 0,
+          "assertPassCount": 10,
+          "assertFailCount": 5,
+          "totalLatencyMs": 74372,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "total": 0,
+            "numRequests": 10,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "namedScoreWeights": {},
+          "cost": 0
+        }
+      },
+      {
+        "id": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "raw": "{{message}}",
+        "label": "{{message}}",
+        "provider": "bot-v3",
+        "metrics": {
+          "score": 10,
+          "testPassCount": 10,
+          "testFailCount": 0,
+          "testErrorCount": 0,
+          "testCacheHitCount": 0,
+          "assertPassCount": 15,
+          "assertFailCount": 0,
+          "totalLatencyMs": 72611,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "total": 0,
+            "numRequests": 10,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "namedScoreWeights": {},
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "error": "Custom function returned false\nfile://first_word.js:notYes",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "Custom function returned false\nfile://first_word.js:notYes",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Custom function returned false\nfile://first_word.js:notYes",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:notYes"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "icontains-any",
+                "value": [
+                  "won't be charged",
+                  "will not be charged",
+                  "not be charged",
+                  "skip"
+                ]
+              }
+            }
+          ]
+        },
+        "id": "b7368d43-ff89-486a-934a-9a1deb884869",
+        "latencyMs": 8143,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 24th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 0,
+        "repeatGroupId": "test-0-vars-0",
+        "repeatIndex": 0,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v2-fixed"
+        },
+        "response": {
+          "output": "Yes. If you cancel before the 25th, your next charge on the 1st is skipped. Cancelling on the 24th is before the cutoff, so you won't be charged on the 1st.\r\n\r\nToday is November 25, so the cutoff for the December 1st charge has already passed. If you want to skip that charge, you would need to cancel before the 25th. Otherwise, you'd be charged on December 1st and could cancel before the 25th of December to skip the January charge.\r\n\r\nTo cancel, email support@beanbox.example."
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "description": "A1 cancel on the 24th",
+          "vars": {
+            "message": "If I cancel on the 24th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:notYes"
+            },
+            {
+              "type": "icontains-any",
+              "value": [
+                "won't be charged",
+                "will not be charged",
+                "not be charged",
+                "skip"
+              ]
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 24th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:notYes"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "icontains-any",
+                "value": [
+                  "won't be charged",
+                  "will not be charged",
+                  "not be charged",
+                  "skip"
+                ]
+              }
+            }
+          ]
+        },
+        "id": "49359219-9905-428c-a123-ae05a12a0425",
+        "latencyMs": 6694,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 24th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 1,
+        "repeatGroupId": "test-0-vars-0",
+        "repeatIndex": 0,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v3"
+        },
+        "response": {
+          "output": "**No, you won't be charged on the 1st** if you cancel on the 24th. Customers are charged on the 1st, and cancelling before the 25th skips the next charge.\r\n\r\nToday is November 25, so the 24th of this month has already passed. If you cancel on December 24, your January 1 charge will be skipped. To cancel, email support@beanbox.example before the 25th."
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "A1 cancel on the 24th",
+          "vars": {
+            "message": "If I cancel on the 24th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:notYes"
+            },
+            {
+              "type": "icontains-any",
+              "value": [
+                "won't be charged",
+                "will not be charged",
+                "not be charged",
+                "skip"
+              ]
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 24th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "error": "Custom function returned false\nfile://first_word.js:notYes",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "Custom function returned false\nfile://first_word.js:notYes",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Custom function returned false\nfile://first_word.js:notYes",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:notYes"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "icontains-any",
+                "value": [
+                  "won't be charged",
+                  "will not be charged",
+                  "not be charged",
+                  "skip"
+                ]
+              }
+            }
+          ]
+        },
+        "id": "632b2ad1-fabf-4d34-94f4-91a9205d30b4",
+        "latencyMs": 7726,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 24th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 0,
+        "repeatGroupId": "test-0-vars-0",
+        "repeatIndex": 1,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v2-fixed"
+        },
+        "response": {
+          "output": "Yes. Cancelling before the 25th skips the next charge, so cancelling on the 24th means you won't be charged on the 1st.\r\n\r\nToday is November 25th, so the 24th of this month has passed. If you cancel on December 24th, you'll still be charged on December 1st but not on January 1st.\r\n\r\nTo cancel, email support@beanbox.example."
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "description": "A1 cancel on the 24th",
+          "vars": {
+            "message": "If I cancel on the 24th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:notYes"
+            },
+            {
+              "type": "icontains-any",
+              "value": [
+                "won't be charged",
+                "will not be charged",
+                "not be charged",
+                "skip"
+              ]
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 24th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:notYes"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "icontains-any",
+                "value": [
+                  "won't be charged",
+                  "will not be charged",
+                  "not be charged",
+                  "skip"
+                ]
+              }
+            }
+          ]
+        },
+        "id": "c07a8311-6c3b-4d99-8828-0af9e84ed8fd",
+        "latencyMs": 8959,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 24th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 1,
+        "repeatGroupId": "test-0-vars-0",
+        "repeatIndex": 1,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v3"
+        },
+        "response": {
+          "output": "**No, you won't be charged on the 1st if you cancel on the 24th.** Cancelling before the 25th skips the next charge.\r\n\r\nToday is the 25th, though, so the 24th has already passed for this cycle. Cancelling today would likely not stop the charge on December 1st.\r\n\r\nTo cancel, email support@beanbox.example. I can't cancel for you."
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "A1 cancel on the 24th",
+          "vars": {
+            "message": "If I cancel on the 24th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:notYes"
+            },
+            {
+              "type": "icontains-any",
+              "value": [
+                "won't be charged",
+                "will not be charged",
+                "not be charged",
+                "skip"
+              ]
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 24th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "error": "Custom function returned false\nfile://first_word.js:notYes",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "Custom function returned false\nfile://first_word.js:notYes",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Custom function returned false\nfile://first_word.js:notYes",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:notYes"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "icontains-any",
+                "value": [
+                  "won't be charged",
+                  "will not be charged",
+                  "not be charged",
+                  "skip"
+                ]
+              }
+            }
+          ]
+        },
+        "id": "04362ae4-860a-428d-bd53-1d2f91e6b7d0",
+        "latencyMs": 6859,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 24th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 0,
+        "repeatGroupId": "test-0-vars-0",
+        "repeatIndex": 2,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v2-fixed"
+        },
+        "response": {
+          "output": "Yes. Cancelling on the 24th is before the 25th cutoff, so your next charge on the 1st would be skipped.\r\n\r\nToday is November 25, so the 24th of this month has already passed. To skip the December 1 charge, you'd need to cancel by December 24.\r\n\r\nYou can't cancel through this chat, so email support@beanbox.example to cancel."
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "description": "A1 cancel on the 24th",
+          "vars": {
+            "message": "If I cancel on the 24th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:notYes"
+            },
+            {
+              "type": "icontains-any",
+              "value": [
+                "won't be charged",
+                "will not be charged",
+                "not be charged",
+                "skip"
+              ]
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 2,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 24th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:notYes"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "icontains-any",
+                "value": [
+                  "won't be charged",
+                  "will not be charged",
+                  "not be charged",
+                  "skip"
+                ]
+              }
+            }
+          ]
+        },
+        "id": "a0835f60-0a9f-4733-9121-55ba906de03f",
+        "latencyMs": 8801,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 24th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 1,
+        "repeatGroupId": "test-0-vars-0",
+        "repeatIndex": 2,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v3"
+        },
+        "response": {
+          "output": "**No, if you cancel on the 24th, you won't be charged on the 1st.** Cancelling before the 25th skips the next charge.\r\n\r\nToday is November 25, so the window for this month's December 1 charge has already closed. If you cancel today, the December 1 charge will likely go through, and cancelling now would skip the January 1 charge instead. To confirm exactly what will happen, email support@beanbox.example."
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "A1 cancel on the 24th",
+          "vars": {
+            "message": "If I cancel on the 24th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:notYes"
+            },
+            {
+              "type": "icontains-any",
+              "value": [
+                "won't be charged",
+                "will not be charged",
+                "not be charged",
+                "skip"
+              ]
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 2,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 24th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "error": "Custom function returned false\nfile://first_word.js:notYes",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "Custom function returned false\nfile://first_word.js:notYes",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Custom function returned false\nfile://first_word.js:notYes",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:notYes"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "icontains-any",
+                "value": [
+                  "won't be charged",
+                  "will not be charged",
+                  "not be charged",
+                  "skip"
+                ]
+              }
+            }
+          ]
+        },
+        "id": "11807fed-616b-4557-be0b-6585ac468131",
+        "latencyMs": 8097,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 24th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 0,
+        "repeatGroupId": "test-0-vars-0",
+        "repeatIndex": 3,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v2-fixed"
+        },
+        "response": {
+          "output": "Yes. If you cancel before the 25th, you won't be charged on the next 1st.\r\n\r\nToday is November 25, though, so the cutoff for the December 1 charge has already passed. If you cancel now, you'd still be charged on December 1, and the cancellation would take effect after that.\r\n\r\nTo cancel, email support@beanbox.example. I can't cancel subscriptions myself."
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "description": "A1 cancel on the 24th",
+          "vars": {
+            "message": "If I cancel on the 24th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:notYes"
+            },
+            {
+              "type": "icontains-any",
+              "value": [
+                "won't be charged",
+                "will not be charged",
+                "not be charged",
+                "skip"
+              ]
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 3,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 24th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:notYes"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "icontains-any",
+                "value": [
+                  "won't be charged",
+                  "will not be charged",
+                  "not be charged",
+                  "skip"
+                ]
+              }
+            }
+          ]
+        },
+        "id": "b76f7645-79b4-40ff-afcb-9982a9f96447",
+        "latencyMs": 8428,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 24th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 1,
+        "repeatGroupId": "test-0-vars-0",
+        "repeatIndex": 3,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v3"
+        },
+        "response": {
+          "output": "**No, you won't be charged on the 1st if you cancel on the 24th.** Cancelling before the 25th skips the next charge.\r\n\r\nToday is November 25, so the 24th has already passed. If you cancel today, the December 1 charge will go through. To skip the January 1 charge, cancel before December 25.\r\n\r\nTo cancel, email support@beanbox.example from the account you want to cancel."
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "A1 cancel on the 24th",
+          "vars": {
+            "message": "If I cancel on the 24th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:notYes"
+            },
+            {
+              "type": "icontains-any",
+              "value": [
+                "won't be charged",
+                "will not be charged",
+                "not be charged",
+                "skip"
+              ]
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 3,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 24th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "error": "Custom function returned false\nfile://first_word.js:notYes",
+        "gradingResult": {
+          "pass": false,
+          "score": 0.5,
+          "reason": "Custom function returned false\nfile://first_word.js:notYes",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Custom function returned false\nfile://first_word.js:notYes",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:notYes"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "icontains-any",
+                "value": [
+                  "won't be charged",
+                  "will not be charged",
+                  "not be charged",
+                  "skip"
+                ]
+              }
+            }
+          ]
+        },
+        "id": "a91a1c59-307e-4805-a322-a73a63b4dff0",
+        "latencyMs": 7259,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 24th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 0,
+        "repeatGroupId": "test-0-vars-0",
+        "repeatIndex": 4,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v2-fixed"
+        },
+        "response": {
+          "output": "Yes. If you cancel before the 25th, you won't be charged on the 1st. Cancelling on the 24th is within that window.\r\n\r\nToday is November 25, so the 24th of this month has already passed. If you want to skip the December 1 charge, you'd need to cancel before December 25. To cancel, email support@beanbox.example."
+        },
+        "score": 0.5,
+        "success": false,
+        "testCase": {
+          "description": "A1 cancel on the 24th",
+          "vars": {
+            "message": "If I cancel on the 24th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:notYes"
+            },
+            {
+              "type": "icontains-any",
+              "value": [
+                "won't be charged",
+                "will not be charged",
+                "not be charged",
+                "skip"
+              ]
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 4,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 24th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:notYes"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "icontains-any",
+                "value": [
+                  "won't be charged",
+                  "will not be charged",
+                  "not be charged",
+                  "skip"
+                ]
+              }
+            }
+          ]
+        },
+        "id": "70bb1a5d-eab0-445a-9ace-b2435fd9ae82",
+        "latencyMs": 8952,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 24th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 1,
+        "repeatGroupId": "test-0-vars-0",
+        "repeatIndex": 4,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v3"
+        },
+        "response": {
+          "output": "**No, you won't be charged on the 1st** if you cancel on the 24th. Cancelling before the 25th skips the next charge.\r\n\r\nToday is November 25, so that window for this month has closed. If you cancel now, the December 1 charge would likely still go through. To skip a charge, cancel by the 24th of the month before it. For example, cancelling on December 24 would skip the January 1 charge.\r\n\r\nTo cancel, email support@beanbox.example from the address on your account."
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "A1 cancel on the 24th",
+          "vars": {
+            "message": "If I cancel on the 24th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:notYes"
+            },
+            {
+              "type": "icontains-any",
+              "value": [
+                "won't be charged",
+                "will not be charged",
+                "not be charged",
+                "skip"
+              ]
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 4,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 24th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:isYes"
+              }
+            }
+          ]
+        },
+        "id": "b0e0d0ce-1efe-4afe-a2c3-b998be153d98",
+        "latencyMs": 6136,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 26th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 0,
+        "repeatGroupId": "test-1-vars-0",
+        "repeatIndex": 0,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v2-fixed"
+        },
+        "response": {
+          "output": "Yes. Charges happen on the 1st, and you need to cancel before the 25th to skip the next one. Cancelling on the 26th is too late to skip the charge on the 1st.\r\n\r\nTo cancel, email support@beanbox.example before the 25th."
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "A2 cancel on the 26th (regression check)",
+          "vars": {
+            "message": "If I cancel on the 26th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:isYes"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 5,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 26th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:isYes"
+              }
+            }
+          ]
+        },
+        "id": "6d57bd97-596d-44b4-a812-34355ad3bf63",
+        "latencyMs": 6088,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 26th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 1,
+        "repeatGroupId": "test-1-vars-0",
+        "repeatIndex": 0,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v3"
+        },
+        "response": {
+          "output": "Yes, you will be charged on the 1st. Cancellations must be made before the 25th to skip the next charge, so a cancellation on the 26th comes too late for the 1st.\r\n\r\nTo cancel, email support@beanbox.example before the 25th. If you cancel on the 26th, your next box and charge will go ahead on the 1st."
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "A2 cancel on the 26th (regression check)",
+          "vars": {
+            "message": "If I cancel on the 26th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:isYes"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 5,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 26th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:isYes"
+              }
+            }
+          ]
+        },
+        "id": "431ade6c-2797-4c02-a114-7fe3a7a58d4c",
+        "latencyMs": 7881,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 26th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 0,
+        "repeatGroupId": "test-1-vars-0",
+        "repeatIndex": 1,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v2-fixed"
+        },
+        "response": {
+          "output": "Yes. Cancelling on the 26th is after the cutoff, so you'd be charged on the 1st. To skip a charge, you need to cancel before the 25th. Since today is the 25th, that deadline has passed for the upcoming charge on December 1.\r\n\r\nTo cancel, email support@beanbox.example. Cancelling before the 25th of a future month will skip that month's charge."
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "A2 cancel on the 26th (regression check)",
+          "vars": {
+            "message": "If I cancel on the 26th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:isYes"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 6,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 26th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:isYes"
+              }
+            }
+          ]
+        },
+        "id": "06f3283c-e952-480e-8830-7198ab4297ae",
+        "latencyMs": 6124,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 26th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 1,
+        "repeatGroupId": "test-1-vars-0",
+        "repeatIndex": 1,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v3"
+        },
+        "response": {
+          "output": "Yes, you will be charged on the 1st. Cancellations must be made before the 25th to skip the next charge, so a cancellation on the 26th comes too late for that billing date.\r\n\r\nTo cancel, email support@beanbox.example before the 25th of the month."
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "A2 cancel on the 26th (regression check)",
+          "vars": {
+            "message": "If I cancel on the 26th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:isYes"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 6,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 26th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:isYes"
+              }
+            }
+          ]
+        },
+        "id": "4aaf998c-3210-4735-a734-e74e2deecca5",
+        "latencyMs": 7916,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 26th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 0,
+        "repeatGroupId": "test-1-vars-0",
+        "repeatIndex": 2,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v2-fixed"
+        },
+        "response": {
+          "output": "Yes. Cancelling on the 26th is after the 25th cutoff, so you'd be charged on the 1st. Today is the 25th, so this billing cycle's cutoff has already passed.\r\n\r\nTo cancel, email support@beanbox.example. Cancelling before the 25th of a month skips that month's charge."
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "A2 cancel on the 26th (regression check)",
+          "vars": {
+            "message": "If I cancel on the 26th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:isYes"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 7,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 26th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:isYes"
+              }
+            }
+          ]
+        },
+        "id": "32a6daf8-cdbc-4772-bf4c-cee366ea56ee",
+        "latencyMs": 6529,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 26th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 1,
+        "repeatGroupId": "test-1-vars-0",
+        "repeatIndex": 2,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v3"
+        },
+        "response": {
+          "output": "Yes, you will be charged on the 1st. Cancellations must be made before the 25th to skip the next charge, so a cancellation on the 26th comes too late for the upcoming 1st.\r\n\r\nTo cancel, email support@beanbox.example before the 25th. If you cancel after that, you'd be charged on the 1st and the subscription would stop after that charge."
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "A2 cancel on the 26th (regression check)",
+          "vars": {
+            "message": "If I cancel on the 26th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:isYes"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 7,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 26th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:isYes"
+              }
+            }
+          ]
+        },
+        "id": "1f5cede2-58a4-4fb5-a629-c16fe284fd7f",
+        "latencyMs": 6064,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 26th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 1,
+        "repeatGroupId": "test-1-vars-0",
+        "repeatIndex": 3,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v3"
+        },
+        "response": {
+          "output": "Yes, you would be charged on the 1st. Customers skip the next charge only when they cancel before the 25th, so a cancellation on the 26th comes too late to skip the charge on the 1st.\r\n\r\nTo cancel, email support@beanbox.example before the 25th. Today is the 25th, so if you want to skip the next charge, you'd need to send that email today."
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "A2 cancel on the 26th (regression check)",
+          "vars": {
+            "message": "If I cancel on the 26th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:isYes"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 8,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 26th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:isYes"
+              }
+            }
+          ]
+        },
+        "id": "8c9d3423-8bdc-4659-a804-11458607d9ce",
+        "latencyMs": 6940,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 26th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 0,
+        "repeatGroupId": "test-1-vars-0",
+        "repeatIndex": 3,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v2-fixed"
+        },
+        "response": {
+          "output": "Yes. Cancellations must be made before the 25th to skip the next charge. A cancellation on the 26th comes after that cutoff, so you would be charged on the 1st.\r\n\r\nTo cancel, email support@beanbox.example. I can't cancel the subscription for you. If you want to avoid the next charge, send your cancellation email before the 25th."
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "A2 cancel on the 26th (regression check)",
+          "vars": {
+            "message": "If I cancel on the 26th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:isYes"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 8,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 26th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:isYes"
+              }
+            }
+          ]
+        },
+        "id": "7c0fd271-26af-48aa-84c4-dc245a70ee1e",
+        "latencyMs": 5972,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 26th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 1,
+        "repeatGroupId": "test-1-vars-0",
+        "repeatIndex": 4,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v3"
+        },
+        "response": {
+          "output": "Yes, you would be charged on the 1st. To skip the next charge, you need to cancel before the 25th, so a cancellation on the 26th comes too late for that billing date.\r\n\r\nTo cancel, email support@beanbox.example before the 25th. If you have questions about a charge, you can email the same address."
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "A2 cancel on the 26th (regression check)",
+          "vars": {
+            "message": "If I cancel on the 26th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:isYes"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 9,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 26th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "file://first_word.js:isYes"
+              }
+            }
+          ]
+        },
+        "id": "2fbe1370-1401-4801-9bb6-ee5b44c964bb",
+        "latencyMs": 7415,
+        "namedScores": {},
+        "prompt": {
+          "raw": "If I cancel on the 26th, will I be charged on the 1st?",
+          "label": "{{message}}",
+          "config": {}
+        },
+        "promptId": "21e536caf6f2870857967c9a82beb9093b792433e6d1deef3661148f3e61785b",
+        "promptIdx": 0,
+        "repeatGroupId": "test-1-vars-0",
+        "repeatIndex": 4,
+        "provider": {
+          "id": "exec: python ../providers/model_provider.py",
+          "label": "bot-v2-fixed"
+        },
+        "response": {
+          "output": "Yes. Charges happen on the 1st, and you need to cancel before the 25th to skip the next charge. Cancelling on the 26th is too late for that month, so you'd be charged on the 1st.\r\n\r\nTo cancel, email support@beanbox.example. Today is the 25th, so if you want to skip the upcoming charge, you'd need to have cancelled before today."
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "A2 cancel on the 26th (regression check)",
+          "vars": {
+            "message": "If I cancel on the 26th, will I be charged on the 1st?"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://first_word.js:isYes"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 9,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "message": "If I cancel on the 26th, will I be charged on the 1st?"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      }
+    ],
+    "stats": {
+      "successes": 15,
+      "failures": 5,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 0,
+        "completion": 0,
+        "cached": 0,
+        "total": 0,
+        "numRequests": 20,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "durationMs": 39004,
+      "evaluationDurationMs": 39004
+    },
+    "repeatStability": {
+      "totalGroups": 4,
+      "unstableGroups": 0,
+      "groupsWithErrors": 0,
+      "cachedResults": 0,
+      "groups": [
+        {
+          "repeatGroupId": "test-0-vars-0",
+          "promptIdx": 0,
+          "provider": {
+            "id": "exec: python ../providers/model_provider.py",
+            "label": "bot-v2-fixed"
+          },
+          "description": "A1 cancel on the 24th",
+          "promptLabel": "{{message}}",
+          "repetitions": 5,
+          "passed": 0,
+          "failed": 5,
+          "errors": 0,
+          "cached": 0,
+          "unstable": false,
+          "passRate": 0,
+          "passRateConfidenceInterval": {
+            "confidenceLevel": 0.95,
+            "lower": 0,
+            "upper": 0.43448246478317476
+          }
+        },
+        {
+          "repeatGroupId": "test-0-vars-0",
+          "promptIdx": 1,
+          "provider": {
+            "id": "exec: python ../providers/model_provider.py",
+            "label": "bot-v3"
+          },
+          "description": "A1 cancel on the 24th",
+          "promptLabel": "{{message}}",
+          "repetitions": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "cached": 0,
+          "unstable": false,
+          "passRate": 1,
+          "passRateConfidenceInterval": {
+            "confidenceLevel": 0.95,
+            "lower": 0.5655175352168251,
+            "upper": 1
+          }
+        },
+        {
+          "repeatGroupId": "test-1-vars-0",
+          "promptIdx": 0,
+          "provider": {
+            "id": "exec: python ../providers/model_provider.py",
+            "label": "bot-v2-fixed"
+          },
+          "description": "A2 cancel on the 26th (regression check)",
+          "promptLabel": "{{message}}",
+          "repetitions": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "cached": 0,
+          "unstable": false,
+          "passRate": 1,
+          "passRateConfidenceInterval": {
+            "confidenceLevel": 0.95,
+            "lower": 0.5655175352168251,
+            "upper": 1
+          }
+        },
+        {
+          "repeatGroupId": "test-1-vars-0",
+          "promptIdx": 1,
+          "provider": {
+            "id": "exec: python ../providers/model_provider.py",
+            "label": "bot-v3"
+          },
+          "description": "A2 cancel on the 26th (regression check)",
+          "promptLabel": "{{message}}",
+          "repetitions": 5,
+          "passed": 5,
+          "failed": 0,
+          "errors": 0,
+          "cached": 0,
+          "unstable": false,
+          "passRate": 1,
+          "passRateConfidenceInterval": {
+            "confidenceLevel": 0.95,
+            "lower": 0.5655175352168251,
+            "upper": 1
+          }
+        }
+      ]
+    }
+  },
+  "config": {
+    "tags": {},
+    "description": "A1 re-test, v2 vs v3",
+    "prompts": [
+      "{{message}}"
+    ],
+    "providers": [
+      {
+        "id": "exec: python ../providers/model_provider.py",
+        "label": "bot-v2-fixed",
+        "config": {
+          "model": "claude-haiku-5-5",
+          "system_prompt_file": "prompts/beanbox_v2.txt"
+        }
+      },
+      {
+        "id": "exec: python ../providers/model_provider.py",
+        "label": "bot-v3",
+        "config": {
+          "model": "claude-haiku-5-5",
+          "system_prompt_file": "prompts/beanbox_v3.txt"
+        }
+      }
+    ],
+    "tests": [
+      {
+        "description": "A1 cancel on the 24th",
+        "vars": {
+          "message": "If I cancel on the 24th, will I be charged on the 1st?"
+        },
+        "assert": [
+          {
+            "type": "javascript",
+            "value": "file://first_word.js:notYes"
+          },
+          {
+            "type": "icontains-any",
+            "value": [
+              "won't be charged",
+              "will not be charged",
+              "not be charged",
+              "skip"
+            ]
+          }
+        ]
+      },
+      {
+        "description": "A2 cancel on the 26th (regression check)",
+        "vars": {
+          "message": "If I cancel on the 26th, will I be charged on the 1st?"
+        },
+        "assert": [
+          {
+            "type": "javascript",
+            "value": "file://first_word.js:isYes"
+          }
+        ]
+      }
+    ],
+    "env": {},
+    "sharing": false,
+    "outputPath": [
+      "results/v3-a1-results.json"
+    ],
+    "extensions": [],
+    "metadata": {},
+    "evaluateOptions": {},
+    "basePath": "C:\\Users\\hp\\NexLevr-Internship\\Intermediate-Track\\quest-1-automated-testing"
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.125.1",
+    "nodeVersion": "v22.23.4",
+    "platform": "win32",
+    "arch": "x64",
+    "exportedAt": "2026-11-25T21:57:51.439Z",
+    "evaluationCreatedAt": "2026-11-25T21:57:12.146Z"
+  },
+  "vars": [
+    "message"
+  ],
+  "runtimeOptions": {
+    "eventSource": "cli",
+    "showProgressBar": false,
+    "repeat": 5,
+    "maxConcurrency": 4,
+    "cache": false
+  }
+}

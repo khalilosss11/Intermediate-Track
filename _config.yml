@@ -1,0 +1,6 @@
+title: Intermediate Track
+description: Nexlevr AI Red Team Internship, Intermediate track
+theme: jekyll-theme-primer
+exclude:
+  - node_modules
+  - package-lock.json

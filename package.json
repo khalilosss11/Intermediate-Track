@@ -1,0 +1,13 @@
+{
+  "name": "intermediate-track",
+  "version": "1.0.0",
+  "scripts": {
+    "q1": "cd quest-1-automated-testing && promptfoo eval -c promptfooconfig.yaml --repeat 3 --no-cache -o results/results.json",
+    "q2": "cd quest-2-languages && promptfoo eval -c promptfooconfig.yaml --repeat 3 --no-cache -o results/results.json"
+  },
+  "description": "Nexlevr AI Red Team Internship, Intermediate track",
+  "dependencies": {
+    "promptfoo": "0.125.1"
+  },
+  "private": true
+}

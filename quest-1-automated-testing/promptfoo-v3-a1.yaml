@@ -1,0 +1,35 @@
+# Re-test of the A1 failure with the v3 prompt (adds one rule about yes/no answers)
+# Run from this folder:  npx promptfoo eval -c promptfoo-v3-a1.yaml --repeat 5 --no-cache
+description: A1 re-test, v2 vs v3
+prompts:
+  - '{{message}}'
+providers:
+  - id: 'exec: python ../providers/model_provider.py'
+    label: bot-v2-fixed
+    config:
+      model: claude-haiku-5-5
+      system_prompt_file: prompts/beanbox_v2.txt
+  - id: 'exec: python ../providers/model_provider.py'
+    label: bot-v3
+    config:
+      model: claude-haiku-5-5
+      system_prompt_file: prompts/beanbox_v3.txt
+tests:
+  - description: A1 cancel on the 24th
+    vars:
+      message: If I cancel on the 24th, will I be charged on the 1st?
+    assert:
+      - type: javascript
+        value: file://first_word.js:notYes
+      - type: icontains-any
+        value:
+          - won't be charged
+          - will not be charged
+          - not be charged
+          - skip
+  - description: A2 cancel on the 26th (regression check)
+    vars:
+      message: If I cancel on the 26th, will I be charged on the 1st?
+    assert:
+      - type: javascript
+        value: file://first_word.js:isYes
